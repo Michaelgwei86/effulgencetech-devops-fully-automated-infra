@@ -1,7 +1,7 @@
 variable "key_pair_name" {
     type = string
     description = "keypair to utilize"
-    default = "Ohio.key"
+    default = "vally-ohhio"
 }
 
 # variable "vpc_id" {
