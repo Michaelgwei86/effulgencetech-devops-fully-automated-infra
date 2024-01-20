@@ -22,7 +22,7 @@ variable "key_pair_name" {
 variable "ami_id" {
   type = string
   description = "AMI ID of instance in your region"
-  default = "ami-01acac09adf473073" //in oregon US-WEST-2 region
+  default = "ami-0c2f3d2ee24929520" //in oregon US-WEST-2 region
 }
 
 resource "aws_security_group" "ec2_sg" {
