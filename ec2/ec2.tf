@@ -68,6 +68,7 @@ resource "aws_security_group" "ec2_sg" {
 
 resource "aws_instance" "web_server" {
   ami                    = var.ami_id
+  vpc_id = "vpc-022493ecde23306f5"
   instance_type          = "t3.small"
   key_name               = var.key_pair_name
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
