@@ -34,3 +34,11 @@ module "ec2_prod" {
   key_pair_name = var.key_pair_name
 }
 
+module "ec2_prod_one" {
+  source = "./ec2"
+  name   = "prod_one"
+  tags          = local.common_tags
+  iam_role_name = module.iam.ec2_iam_role_name
+  key_pair_name = var.key_pair_name
+}
+
