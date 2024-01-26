@@ -28,7 +28,7 @@ variable "ami_id" {
 resource "aws_security_group" "ec2_sg" {
   name        = join("", [var.name, "-", "ec2-sg"])
   description = "Allow  traffic for http and ssh"
-  vpc_id = "vpc-022493ecde23306f5"
+  
 
   ingress {
     from_port   = 22
@@ -72,7 +72,7 @@ resource "aws_instance" "web_server" {
   key_name               = var.key_pair_name
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
   user_data              = file("scripts/userdata.sh")
-  vpc_id = "vpc-022493ecde23306f5"
+  
  # iam_instance_profile   = aws_iam_instance_profile.instance_profile.name
   tags                   = merge(var.tags, { Name = join("", [var.name, "-", "webserver"]) }, { Environment = var.name })
 
